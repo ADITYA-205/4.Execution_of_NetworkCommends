@@ -36,6 +36,7 @@ REG.NO:212223040012
 ## PROGRAM:
 ## PING COMMAND
 ## CLIENT
+```
 import socket 
 from pythonping import ping 
 s=socket.socket() 
@@ -48,8 +49,9 @@ while True:
         c.send(str(ping(hostname, verbose=False)).encode()) 
     except KeyError: 
         c.send("Not Found".encode())
-        
+ ```       
 ## SERVER
+```
 import socket 
 s=socket.socket() 
 s.connect(('localhost',8000)) 
@@ -57,12 +59,15 @@ while True:
     ip=input("Enter the website you want to ping ") 
     s.send(ip.encode()) 
     print(s.recv(1024).decode())
+
+
+
 TRANCEROUTE COMMAND
 from scapy.all import* 
 target = ["www.google.com"] 
 result, unans = traceroute(target,maxttl=32) 
 print(result,unans)
-
+```
 ## Output
 ## CLIENT
 ![image](https://github.com/Alan-samuel/4.Execution_of_NetworkCommends/assets/147091803/1a0477df-eac2-4a3d-bd9d-9350888f67e9)
